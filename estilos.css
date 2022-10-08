@@ -15,7 +15,9 @@ body {
   width: 100%; /* todo el espacio de punta a punta */
   z-index: 10; /* siempre arriba de todos lo elementos de al pagina */
 }
-#navbar nav {
+/* se aplica la misma propiedad flex a dos etiquetas */
+#navbar nav,
+.row {
   display: flex; /* display flex para los elementos de la barra */
 }
 #navbar nav a {
@@ -66,6 +68,25 @@ body {
   background-image: url("https://img.freepik.com/free-photo/blurred-background_1417-1412.jpg?w=740&t=st=1665210020~exp=1665210620~hmac=1e6c1d6b8ab35d8b07e0362d69ff5d71d1a201447a7bf259560b61a2eebda0dd");
   background-size: cover;
 }
+.col {
+  flex: 1; /*que ocupe todo el espacio posible y como es flex se ponen uno al lado del otro */
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.cuerpo {
+  background-color: white;
+  min-height: 60vh; /*para hacerlo mas corto */
+  padding: 10px;
+  font-size: 1.2em;
+}
+.pagina > h2 {
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 2px solid black;
+  padding: 8px;
+  font-size: 2em;
+}
+
 @media all and (max-width: 640px) {
   #navbar nav a {
     /* cambiamos el tamanio de la barra de navegacion para disp. chicos */
@@ -74,5 +95,9 @@ body {
   }
   #navbar {
     height: 30px;
+  }
+  .row {
+    flex-direction: column; /*en la pantalla chica pasamos la columnas a fila para
+                              que sean mas faciles de leer*/
   }
 }
