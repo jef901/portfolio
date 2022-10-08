@@ -1,56 +1,74 @@
 body {
+  background-color: black;
 }
 
 #wrapper {
-  background-color: #ddd;
+  background-color: #ddd; /* color gris */
 }
 #navbar {
-  position: fixed;
+  position: fixed; /* barra fijo arriba */
   top: 0;
   left: 0;
   height: 60px;
   background-color: black;
-  display: block;
-  width: 100%;
-  z-index: 10;
+  display: block; /* agarre todo el espacio */
+  width: 100%; /* todo el espacio de punta a punta */
+  z-index: 10; /* siempre arriba de todos lo elementos de al pagina */
 }
 #navbar nav {
-  display: flex;
+  display: flex; /* display flex para los elementos de la barra */
 }
 #navbar nav a {
-  flex: 0 0 25vw;
-  text-align: center;
+  flex: 0 0 25vw; /* cada a utiliza el 25 del view width y se reducen de manera proporcional */
+  text-align: center; /* alineamos */
   font-size: 2em;
   color: #eee;
-  text-decoration: none;
-  height: 60px;
+  text-decoration: none; /* sacamos los subrayados */
+  height: 60px; /* setemos altura de la barra  despues se achica en dispositivos menores */
   line-height: 2em;
   cursor: pointer;
 }
 
+#navbar nav a:hover {
+  background-color: #222;
+  color: white;
+}
+/* crea espacio para cada "pagina" */
 .pagina {
   height: auto;
-  min-height: 100vh; //el alto de toda la pagina cada div
-  padding: 60px 10px;
-  background-color: #eee;
+  min-height: 100vh; /* el alto de toda la pagina cada div */
+  padding: 60px 10px; /* 60 desde arriba 10 de los costados */
+  background-color: #eee; /* color gris oscuro */
 }
-
+/* jumbotron componente llamar la atencion sobre algo */
 .jumbotron {
-  background-color: rgba(255, 255, 255, 0.5);
-  width: 80%;
+  background-color: rgba(255, 255, 255, 0.5); /*color blanco y transparencia*/
+  width: 80%; /* tamanio */
   margin: 100px auto;
   border: 5px solid white;
   text-align: center;
   border-radius: 10px;
   padding: 20px;
 }
+/*tamanios customizados para el jumbotron */
 .jumbotron h2 {
   text-transform: uppercase;
   font-size: 3em;
   color: black;
 }
+
+.jumbotron h3 {
+  text-transform: uppercase;
+  font-size: 2em;
+  color: #222;
+}
+#home {
+  background-image: url("https://img.freepik.com/free-photo/blurred-background_1417-1412.jpg?w=740&t=st=1665210020~exp=1665210620~hmac=1e6c1d6b8ab35d8b07e0362d69ff5d71d1a201447a7bf259560b61a2eebda0dd");
+  background-size: cover;
+}
 @media all and (max-width: 640px) {
   #navbar nav a {
+    /* cambiamos el tamanio de la barra de navegacion para disp. chicos */
     font-size: 1.2em;
     height: 30px;
   }
