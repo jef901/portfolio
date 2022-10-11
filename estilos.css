@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
   background-color: black;
 }
@@ -86,7 +89,40 @@ body {
   padding: 8px;
   font-size: 2em;
 }
-
+/* wrap para que las tarjetas se acomoden en el container hacia abajo*/
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.card {
+  flex: 0 0 30%; /* ocupa cada elemento el 33% */
+  background-color: white;
+  border-radius: 20px;
+  border: 1px solid white;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.card img {
+  max-width: 100%;
+}
+.card h3 {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2em;
+  padding: 0px;
+  margin: 0;
+}
+.card salida {
+  padding: 0 20px 20px;
+}
+.card .salida > button {
+  background-color: lightgrey;
+  border: 0;
+  color: white;
+  padding: 10px;
+  width: 100%;
+}
 @media all and (max-width: 640px) {
   #navbar nav a {
     /* cambiamos el tamanio de la barra de navegacion para disp. chicos */
@@ -99,5 +135,8 @@ body {
   .row {
     flex-direction: column; /*en la pantalla chica pasamos la columnas a fila para
                               que sean mas faciles de leer*/
+  }
+  .card {
+    flex: auto;
   }
 }
